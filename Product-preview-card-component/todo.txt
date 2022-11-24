@@ -1,7 +1,5 @@
 ### TO DO 
 
-#Fix Shoping cart 
-#add good footer 
 #Add readme file 
 
 <---MAIN--->
