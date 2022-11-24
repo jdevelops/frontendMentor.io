@@ -11,6 +11,10 @@ body {
   background-color: hsl(30deg, 38%, 92%);
 }
 
+h1 {
+  margin: 0;
+}
+
 .card {
   position: absolute;
   top: 50%;
@@ -21,14 +25,15 @@ body {
   flex-direction: column;
   border-radius: 5px;
   width: 92vw;
-  height: 90vh;
+  height: 92vh;
 }
 
 .card__img {
-  height: 48%;
+  height: 43%;
   width: 100%;
   background-image: url(../images/image-product-mobile.jpg);
   background-size: cover;
+  border-radius: 10px 10px 0 0;
 }
 
 .card__body {
@@ -36,14 +41,15 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 7.5%;
-  height: 52%;
+  padding: 7%;
+  height: 57%;
+  border-radius: 0 0 10px 10px;
 }
 
 .card__subtitle {
   font-family: Montserrat;
   color: hsl(228deg, 12%, 48%);
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   letter-spacing: 0.4rem;
 }
 
@@ -51,12 +57,12 @@ body {
   font-family: Fraunces;
   color: hsl(212deg, 21%, 14%);
   line-height: 2.4rem;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
 }
 
 .card__text {
-  font-size: 1rem;
-  line-height: 1.75rem;
+  font-size: 1.02rem;
+  line-height: 1.6rem;
   font-family: Montserrat;
   color: hsl(228deg, 12%, 48%);
 }
@@ -74,6 +80,7 @@ body {
   width: 50%;
 }
 .card__prices span {
+  padding-left: 10px;
   font-family: Montserrat;
   color: hsl(228deg, 12%, 48%);
   font-size: 0.9rem;
@@ -81,17 +88,17 @@ body {
 }
 
 .card__button {
-  height: 40px;
   font-family: montserrat;
   font-weight: 700;
-  border-radius: 5px;
+  border-radius: 7.5px;
+  height: 14%;
   border: none;
   background-color: hsl(158deg, 36%, 37%);
   color: hsl(0deg, 0%, 100%);
 }
 .card__button:hover {
   cursor: pointer;
-  background-color: hsl(212deg, 21%, 14%);
+  background-color: hsl(156deg, 42%, 18%);
 }
 
 .footer {

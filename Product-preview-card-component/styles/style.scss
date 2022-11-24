@@ -3,7 +3,7 @@ $primaryCream: hsl(30, 38%, 92%);
 $supportWhite: hsl(0, 0%, 100%);
 $supportDarkBlue: hsl(212, 21%, 14%);
 $supportGrayishBlue: hsl(228, 12%, 48%);
-
+$hoverGreen: hsl(156, 42%, 18%);
 @import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat&display=swap");
 /* Fonts are 
 Montserrat and Fraunces */
@@ -16,6 +16,9 @@ body {
   background-color: $primaryCream;
 }
 
+h1 {
+  margin: 0;
+}
 .card {
   position: absolute;
   top: 50%;
@@ -24,29 +27,30 @@ body {
   transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
-
   border-radius: 5px;
   width: 92vw;
-  height: 90vh;
+  height: 92vh;
 }
 .card__img {
-  height: 48%;
+  height: 43%;
   width: 100%;
   background-image: url(../images/image-product-mobile.jpg);
   background-size: cover;
+  border-radius: 10px 10px 0 0;
 }
 .card__body {
   background-color: $supportWhite;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 7.5%;
-  height: 52%;
+  padding: 7%;
+  height: 57%;
+  border-radius: 0 0 10px 10px;
 }
 .card__subtitle {
   font-family: Montserrat;
   color: $supportGrayishBlue;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   letter-spacing: 0.4rem;
 }
 
@@ -54,11 +58,11 @@ body {
   font-family: Fraunces;
   color: $supportDarkBlue;
   line-height: 2.4rem;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
 }
 .card__text {
-  font-size: 1rem;
-  line-height: 1.75rem;
+  font-size: 1.02rem;
+  line-height: 1.6rem;
   font-family: Montserrat;
   color: $supportGrayishBlue;
 }
@@ -74,6 +78,7 @@ body {
     width: 50%;
   }
   span {
+    padding-left: 10px;
     font-family: Montserrat;
     color: $supportGrayishBlue;
     font-size: 0.9rem;
@@ -81,17 +86,17 @@ body {
   }
 }
 .card__button {
-  height: 40px;
   font-family: montserrat;
   font-weight: 700;
-  border-radius: 5px;
+  border-radius: 7.5px;
+  height: 14%;
   border: none;
   background-color: $primaryCyan;
   color: $supportWhite;
 
   &:hover {
     cursor: pointer;
-    background-color: $supportDarkBlue;
+    background-color: $hoverGreen;
   }
 }
 

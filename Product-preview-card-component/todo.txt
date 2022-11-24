@@ -1,8 +1,8 @@
 ### TO DO 
 
-#Fix coreners 
 #Fix Shoping cart 
-#fix body sizing
-#polish subtitle font 
 #add good footer 
 #Add readme file 
+
+<---MAIN--->
+#DESKTOP VIEW
