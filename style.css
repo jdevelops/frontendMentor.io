@@ -1,0 +1,94 @@
+:root {
+  --primaryBeige: #f1f1f1;
+  --secondGrey: hsl(0, 0%, 90%);
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Alexandria:wght@400;600;700&display=swap");
+
+html {
+  font-family: "Alexandria", sans-serif;
+  font-size: 16px;
+}
+body {
+  background-color: var(--primaryBeige);
+}
+.wrapper {
+  padding: 1rem;
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  outline: 2px solid red;
+}
+
+.header__Menu {
+  display: flex;
+  width: 100%;
+}
+.header__Menu > div {
+  outline: 2px solid navy;
+  width: 25%;
+  text-align: center;
+}
+.main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem 1rem;
+  padding: 2rem;
+}
+.card {
+  width: 350px;
+  height: 315px;
+  place-self: center;
+  background-color: var(--secondGrey);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.card__header {
+  border-bottom: 1px solid black;
+  height: 15%;
+}
+.card__body {
+  position: relative;
+  border-radius: 1rem;
+  flex-grow: 1;
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+/* TEST */
+
+/* TEST */
+
+.card__body--blur {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid brown;
+  background-image: url(./Assets/placeholder1.png);
+}
+.card__body--opacity {
+  opacity: 0;
+}
+
+.card__btn {
+  display: block;
+  background: none;
+  outline: none;
+  text-decoration: none;
+  transition-duration: 0.5s;
+  margin: auto auto;
+  width: 20%;
+  height: 20%;
+  z-index: 1;
+}
+
+.card__footer {
+}
+
+.card__footer p {
+  text-align: center;
+}

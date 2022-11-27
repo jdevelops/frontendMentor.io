@@ -1,0 +1,6 @@
+### TO DO 
+
+#Add readme file 
+# fix 1024 - 768 res 
+
+<---MAIN--->
