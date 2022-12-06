@@ -1,6 +1,8 @@
 :root {
-  --primaryBeige: #f1f1f1;
-  --secondGrey: hsl(0, 0%, 90%);
+  --primaryCw: #f2f1f0;
+  --secondaryCw: #6c6a61;
+  --thirdCw: #6c6a61;
+  --supportCw: #6c6a61;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Alexandria:wght@400;600;700&display=swap");
@@ -10,17 +12,22 @@ html {
   font-size: 16px;
 }
 body {
-  background-color: var(--primaryBeige);
+  background-color: var(--primaryCw);
 }
 .wrapper {
-  padding: 1rem;
+  padding: 0 0rem;
 }
 .header {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  outline: 2px solid red;
+  justify-content: left;
+  align-items: left;
+  background-color: var(--thirdCw);
+  color: var(--primaryCw);
+}
+.header > h1 {
+  padding-left: 5rem;
 }
 
 .header__Menu {
@@ -28,67 +35,161 @@ body {
   width: 100%;
 }
 .header__Menu > div {
-  outline: 2px solid navy;
+  outline: 0.5px solid var(--thirdCw);
   width: 25%;
   text-align: center;
 }
 .main {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 2rem 1rem;
+  gap: 2rem 1.5rem;
   padding: 2rem;
 }
+
 .card {
-  width: 350px;
+  max-width: 350px;
+
   height: 315px;
   place-self: center;
-  background-color: var(--secondGrey);
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
+  background-color: var(--secondaryCw);
+  outline: 2px solid var(--secondaryCw);
 }
-.card__header {
-  border-bottom: 1px solid black;
-  height: 15%;
-}
+
 .card__body {
   position: relative;
   border-radius: 1rem;
-  flex-grow: 1;
   display: flex;
-  height: 100%;
+  min-height: 85%;
   width: 100%;
 }
-/* TEST */
+/* TESTx2 */
 
-/* TEST */
+.card__overlay {
+  transition: 0.3s all;
+  border-radius: 1rem;
+}
 
-.card__body--blur {
+.card__picture {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  transition: 0.3s all;
+  background-color: var(--primaryCw);
+  outline: 2px solid var(--supportCw);
+}
+
+.card__link > .card__overlay {
   position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
   width: 100%;
   height: 100%;
-  border: 2px solid brown;
-  background-image: url(./Assets/placeholder1.png);
-}
-.card__body--opacity {
+  background: rgba(0, 0, 0, 0.2);
+  color: #fff;
   opacity: 0;
-}
-
-.card__btn {
-  display: block;
-  background: none;
-  outline: none;
-  text-decoration: none;
-  transition-duration: 0.5s;
-  margin: auto auto;
-  width: 20%;
-  height: 20%;
-  z-index: 1;
-}
-
-.card__footer {
-}
-
-.card__footer p {
   text-align: center;
+}
+
+.card__overlay > p {
+  font-weight: 600;
+  font-size: 1.15rem;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.card__link:hover img {
+  filter: blur(2px);
+}
+.card__link:hover .card__overlay {
+  opacity: 1;
+}
+/*---CARD FOOTER---*/
+.card__footer {
+  flex-grow: 1;
+  position: relative;
+  color: var(--primaryCw);
+}
+.card__footer p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  text-align: justify;
+  font-weight: 600;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 600px) {
+  .header > h1 {
+    font-size: 1rem;
+    padding-left: 15vw;
+  }
+  .main {
+    grid-template-columns: 1fr;
+    padding: 2rem 1rem;
+  }
+
+  .card {
+    width: 70vw;
+    min-height: 30vh;
+    max-height: 350px;
+    place-self: center;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    outline: 2px solid var(--supportCw);
+  }
+
+  .card__picture {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    transition: 0.3s all;
+    background-color: var(--primaryCw);
+    outline: 2px solid var(--supportCw);
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 992px) {
+  .header > h1 {
+    font-size: 1.5rem;
+  }
+  .main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem 1rem;
+    padding: 2rem;
+  }
+  .card__picture {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    transition: 0.3s all;
+    background-color: var(--primaryCw);
+    outline: 2px solid var(--supportCw);
+  }
+  .card {
+    width: 40vw;
+    height: 25vh;
+    place-self: center;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    outline: 2px solid var(--supportCw);
+  }
+  .card__footer p {
+    font-weight: 600;
+    font-size: 0.75rem;
+    white-space: nowrap;
+  }
 }
