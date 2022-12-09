@@ -1,4 +1,5 @@
 #####
 
-#Fix design
-#add First site
+# fix #1 accessibility and HTML issues
+# fix #1 button and line spacing in title 
+# post #2 solution 
