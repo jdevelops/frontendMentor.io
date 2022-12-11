@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap");
+@import "./variables";
+
+@mixin flexCenter($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+html {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+.wrapper {
+  background-color: $secondaryOff-White;
+  padding: 1rem;
+  height: 100vh;
+}
+
+.card {
+  @include flexCenter(column);
+  align-items: flex-start;
+  margin-bottom: 4.25rem;
+}
+
+/*===CARD1===*/
+
+.card1 {
+  img {
+    width: 100%;
+  }
+  h1 {
+    margin: 1.6rem 0 1rem 0;
+    font-size: 2.725rem;
+    line-height: 2.725rem;
+    color: $secondaryVeryDarkBlue;
+  }
+  p {
+    color: $secondaryDarkBlue;
+    line-height: 1.725rem;
+    margin: 0rem 0 1.7rem 0;
+  }
+
+  button {
+    outline: 0;
+    border: 0;
+    padding: 0;
+    font-size: 0.85rem;
+    letter-spacing: 0.35rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    background-color: $primaryRed;
+    color: $secondaryOff-White;
+    width: 52.75%;
+    height: 3rem;
+  }
+}
+
+/*===CARD2===*/
+
+.card2 {
+  background-color: $secondaryVeryDarkBlue;
+  padding: 1.35rem;
+}
+.card2__title {
+  color: $primaryOrange;
+  font-size: 2.15rem;
+  margin: 0;
+}
+.card2__newsbox {
+  margin-top: 2rem;
+  border-bottom: 1px solid $secondaryDarkBlue;
+  h2 {
+    margin: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.35rem;
+    color: $secondaryOff-White;
+  }
+  p {
+    margin: 0;
+    padding-right: 1rem;
+    padding-bottom: 2rem;
+    line-height: 1.75rem;
+    color: $secondaryGrayishBlue;
+  }
+}
+.card2__newsbox--last {
+  border-bottom: 0px;
+}
+
+/*===CARD3===*/
+
+.card3__wrapper {
+  padding-bottom: 2rem;
+  @include flexCenter(row);
+  img {
+    width: 100px;
+    height: 128px;
+  }
+}
+
+.card3__newsbox {
+  @include flexCenter(column);
+  align-items: flex-start;
+  padding-left: 1.65rem;
+  h2 {
+    margin: 0 0 0.7rem 0;
+    font-size: 2.15rem;
+    color: $secondaryGrayishBlue;
+  }
+  h3 {
+    margin: 0 0 0.5rem 0;
+    color: $secondaryVeryDarkBlue;
+    font-size: 1.25rem;
+  }
+  p {
+    margin: 0;
+    color: $secondaryDarkBlue;
+    line-height: 1.75rem;
+  }
+}
+.card3__wrapper--last {
+  padding-bottom: 1rem;
+}
+.attribution {
+  display: none;
+}
+/*---GLOW----*/
