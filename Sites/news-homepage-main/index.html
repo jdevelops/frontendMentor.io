@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- displays site properly based on user's device -->
     <link rel="stylesheet" href="./style/style.css">
-    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+    <script src="./script.js" defer></script>
     <title>Frontend Mentor | News homepage</title>
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -24,18 +24,24 @@
 </head>
 
 <body>
+    <div id="wrapper" class="wrapper">
+        <nav class="nav__bar">
+            <img class="nav__logo" src="./assets/logo.svg" alt="site logo">
+            <input class="closing__class" id="nav__toggle" type="checkbox" />
+            <label class="nav__btn closing__class" for="nav__toggle">
+                <img id="hamburgerIcon" class="closing__class" src="./assets/icon-menu.svg" alt="hamburger menu open">
+            </label>
+            <div class="nav__menu closing__class">
+                <a class="closing__class" href="#Home">Home</a>
+                <a class="closing__class" href="#New">New</a>
+                <a class="closing__class" href="#Popular">Popular</a>
+                <a class="closing__class" href="#Trending">Trending</a>
+                <a class="closing__class" href="#Categories">Categories</a>
+            </div>
 
-    <nav>
-        <img src="" alt="site logo">
-        <div class="nav__menu"> Home
-            New
-            Popular
-            Trending
-            Categories</div>
+        </nav>
+        <main>
 
-    </nav>
-    <main>
-        <div class="wrapper">
 
             <div class="card card1">
                 <img src="./assets/image-web-3-mobile.jpg" alt="img">
@@ -100,7 +106,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+    </div>
 
 
 

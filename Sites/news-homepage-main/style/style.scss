@@ -7,7 +7,6 @@
   align-items: center;
   flex-direction: $direction;
 }
-
 *,
 *::after,
 *::before {
@@ -18,7 +17,60 @@ html {
 }
 body {
   margin: 0;
+  height: 100%;
 }
+/*====NAV====*/
+.nav__bar {
+  @include flexCenter(row);
+  justify-content: space-between;
+  margin-top: 0.6rem;
+  margin-bottom: 1.75rem;
+  min-height: 35px;
+  .nav__logo {
+    width: 45px;
+    height: 28px;
+  }
+}
+.nav__menu {
+  display: block; /*change to none to hide menu*/
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 67.5vw;
+  height: 0; /*change to 100vh to use menu*/
+  background-color: $secondaryOff-White;
+  transition: 0.2s;
+  padding: 0rem;
+  a {
+    display: none;
+    text-decoration: none;
+    font-size: 1.15rem;
+    margin-bottom: 1.75rem;
+
+    &:visited {
+      color: inherit;
+    }
+  }
+}
+
+#nav__toggle {
+  display: none;
+  &:checked ~ .nav__menu {
+    z-index: 1;
+    display: block; /*change to block to use menu*/
+    height: 100vh;
+    padding: 10rem 1.5rem;
+    a {
+      display: block;
+    }
+  }
+}
+.nav__btn {
+  position: relative;
+  z-index: 2;
+}
+
+/*---MAIN---*/
 .wrapper {
   background-color: $secondaryOff-White;
   padding: 1rem;
