@@ -20,6 +20,7 @@ body {
   height: 100%;
 }
 /*====NAV====*/
+
 .nav__bar {
   @include flexCenter(row);
   justify-content: space-between;
@@ -32,42 +33,61 @@ body {
   }
 }
 .nav__menu {
-  display: block; /*change to none to hide menu*/
+  display: none; /*change to none to hide menu*/
   position: fixed;
   top: 0;
   right: 0;
   width: 67.5vw;
   height: 0; /*change to 100vh to use menu*/
   background-color: $secondaryOff-White;
-  transition: 0.2s;
-  padding: 0rem;
+  transition: 0.25s;
+  z-index: 4;
   a {
     display: none;
     text-decoration: none;
     font-size: 1.15rem;
     margin-bottom: 1.75rem;
-
-    &:visited {
-      color: inherit;
+    z-index: inherit;
+    color: $secondaryVeryDarkBlue;
+    &:hover {
+      color: $primaryOrange;
     }
   }
 }
 
 #nav__toggle {
+  //hiden checkbox
   display: none;
-  &:checked ~ .nav__menu {
-    z-index: 1;
-    display: block; /*change to block to use menu*/
-    height: 100vh;
-    padding: 10rem 1.5rem;
-    a {
-      display: block;
-    }
+}
+
+.nav__btn {
+  // hasmburger button
+  position: relative;
+  z-index: 5;
+}
+
+.nav__animation {
+  //This class makes pop up menu visible with animations
+  display: block; /*change to block to use menu*/
+  height: 100vh;
+  padding: 10rem 1.5rem;
+  a {
+    display: block;
   }
 }
-.nav__btn {
-  position: relative;
-  z-index: 2;
+
+.closing__class {
+  // class for closing popup menu
+  display: none; // change to block for graying
+  position: fixed;
+  height: 100vh;
+  width: 100vh;
+  background-color: rgb(128, 126, 137);
+  opacity: 50%;
+  z-index: 3;
+}
+.show {
+  display: block;
 }
 
 /*---MAIN---*/
@@ -86,7 +106,7 @@ body {
 /*===CARD1===*/
 
 .card1 {
-  img {
+  .card1__img--mobile {
     width: 100%;
   }
   h1 {
@@ -186,3 +206,30 @@ body {
   display: none;
 }
 /*---GLOW----*/
+
+/*===MEDIA QUERIES====*/
+@media only screen and (min-width: 992px) {
+  .wrapper {
+    padding: 0;
+    margin: 11rem;
+  }
+  .nav__btn {
+    display: none;
+  }
+  .nav__bar {
+    //outline: 1px solid brown;
+  }
+  .nav__menu {
+    @include flexCenter(row);
+    justify-content: flex-end;
+    height: 100%;
+    position: static;
+
+    a {
+      //outline: 1px solid green;
+      display: block;
+      margin: 0 0 0 3.5rem;
+      color: $secondaryDarkBlue;
+    }
+  }
+}

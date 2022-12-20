@@ -24,29 +24,36 @@
 </head>
 
 <body>
+    <div class="closing__class"></div>
     <div id="wrapper" class="wrapper">
         <nav class="nav__bar">
             <img class="nav__logo" src="./assets/logo.svg" alt="site logo">
-            <input class="closing__class" id="nav__toggle" type="checkbox" />
-            <label class="nav__btn closing__class" for="nav__toggle">
-                <img id="hamburgerIcon" class="closing__class" src="./assets/icon-menu.svg" alt="hamburger menu open">
+            <input id="nav__toggle" type="checkbox" />
+            <label class="nav__btn" for="nav__toggle">
+                <img id="hamburgerIcon" src="./assets/icon-menu.svg" alt="hamburger menu open">
             </label>
-            <div class="nav__menu closing__class">
-                <a class="closing__class" href="#Home">Home</a>
-                <a class="closing__class" href="#New">New</a>
-                <a class="closing__class" href="#Popular">Popular</a>
-                <a class="closing__class" href="#Trending">Trending</a>
-                <a class="closing__class" href="#Categories">Categories</a>
+            <div class="nav__menu">
+                <a href="#Home">Home</a>
+                <a href="#New">New</a>
+                <a href="#Popular">Popular</a>
+                <a href="#Trending">Trending</a>
+                <a href="#Categories">Categories</a>
             </div>
+
 
         </nav>
         <main>
 
 
             <div class="card card1">
-                <img src="./assets/image-web-3-mobile.jpg" alt="img">
+                <picture>
+                    <source class="card1__img--desktop" srcset="./assets/image-web-3-desktop.jpg"
+                        media="(min-width: 716px)">
+                    <img class="card1__img--mobile" src="./assets/image-web-3-mobile.jpg" alt="card1 img">
+                </picture>
                 <h1>The Bright Future of Web 3.0?</h1>
-                <p> We dive into the next evolution of the web that claims to put the power of the platforms back into
+                <p> We dive into the next evolution of the web that claims to put the power of the platforms back
+                    into
                     the hands of the people.
                     But is it really fulfilling its promise?</p>
                 <button>Read more</button>
@@ -106,6 +113,7 @@
                     </div>
                 </div>
             </div>
+        </main>
     </div>
 
 

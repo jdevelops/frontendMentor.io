@@ -1,47 +1,30 @@
-let scrollToggle = document.querySelector("#nav__toggle");
-let navMenu = document.querySelector(".nav__menu");
-let hamburgerIcon = document.querySelector("#hamburgerIcon");
-let bodyTag = document.querySelector("body");
-let menuFlag = false;
-/*
-function scrollFunction() {
-  if (scrollToggle.checked == true) {
-    document.querySelector("#wrapper").classList.add("scrollDisable");
-  }
-  document.querySelector("#wrapper").classList.remove("scrollDisable");
-}
+let checkboxToggle = document.querySelector("#nav__toggle"); // hidden checkbox
+let navMenu = document.querySelector(".nav__menu"); // Expandable menu
+let hamburgerIcon = document.querySelector("#hamburgerIcon"); // hambureger icon
+let bodyTag = document.querySelector("body"); // body tag for overflow styling
+let closingClass = document.querySelector(".closing__class");
+let checkboxState = 0;
 
-//document.querySelector("#nav__toggle").addEventListener("click", disable);
-//document.querySelector("#nav__toggle").addEventListener("click", enable);
-*/
-
-scrollToggle.addEventListener("click", function () {
-  menuFunction("by label");
+checkboxToggle.addEventListener("click", function () {
+  checkboxState = !checkboxState;
+  menuFunction();
 });
 
-window.onclick = function (event) {
-  console.log("window.onclick");
-  if (!event.target.classList.contains("closing__class")) {
-    console.log("nie zawiera");
-    if ((navMenu.style.display = "block")) {
-      navMenu.style.display = "none";
-    }
-    if ((scrollToggle.checked = true)) {
-      scrollToggle.checked = false;
-    }
-    menuFunction("by windows on click");
-  } else {
-    console.log("zawiera");
-  }
-};
+closingClass.addEventListener("click", function () {
+  checkboxState = !checkboxState;
+  menuFunction();
+});
 
-function menuFunction(x) {
-  console.log(`menuFunction call ${x}`);
-  if (scrollToggle.checked == true) {
+function menuFunction() {
+  if (checkboxState == true) {
     bodyTag.style.overflow = "hidden";
     hamburgerIcon.src = "./assets/icon-menu-close.svg";
+    navMenu.classList.toggle("nav__animation");
+    closingClass.classList.toggle("show");
   } else {
     bodyTag.style.overflow = "visible";
     hamburgerIcon.src = "./assets/icon-menu.svg";
+    navMenu.classList.toggle("nav__animation");
+    closingClass.classList.toggle("show");
   }
 }
